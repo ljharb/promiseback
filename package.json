@@ -1,0 +1,55 @@
+{
+	"name": "promiseback",
+	"version": "0.0.0",
+	"description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+	"main": "index.js",
+	"scripts": {
+		"test": "node test.js",
+		"coverage": "covert test.js",
+		"coverage-quiet": "covert test.js --quiet"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ljharb/promiseback"
+	},
+	"keywords": [
+		"promiseback",
+		"promisebacks",
+		"promise",
+		"promises",
+		"callback",
+		"callbacks"
+	],
+	"author": "Jordan Harband",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ljharb/promiseback/issues"
+	},
+	"homepage": "https://github.com/ljharb/promiseback",
+	"testling": {
+		"files": "test.js",
+		"browsers": [
+			"iexplore/6.0..latest",
+			"firefox/3.0..6.0",
+			"firefox/15.0..latest",
+			"firefox/nightly",
+			"chrome/4.0..10.0",
+			"chrome/20.0..latest",
+			"chrome/canary",
+			"opera/10.0..latest",
+			"opera/next",
+			"safari/4.0..latest",
+			"ipad/6.0..latest",
+			"iphone/6.0..latest",
+			"android-browser/4.2"
+		]
+	},
+	"dependencies": {
+		"q": "~0.9.7"
+	},
+	"devDependencies": {
+		"tape": "~2.3.2",
+		"covert": "~0.2.0"
+	}
+}
+
