@@ -1,8 +1,9 @@
 var test = require('tape');
 var promiseback = require('./');
-var Q = require('q');
 
-var Deferred = Q.defer().constructor;
+var Deferred = promiseback.Deferred;
+var Promise = Deferred.Promise;
+
 var toStr = Object.prototype.toString;
 
 test('without a promise', function (t) {
@@ -50,10 +51,10 @@ test('with a promise', function (t) {
 		st.test('with a resolved promise', function (rpt) {
 			rpt.plan(2);
 
-			var fulfilled = Q(42);
+			var fulfilled = Promise.from(42);
 			var promisebacked = promiseback(fulfilled, null);
 
-			rpt.ok(Q.isPromise(promisebacked), 'returns a promise');
+			rpt.ok(promisebacked instanceof Promise, 'returns a promise');
 			promisebacked.then(function (value) {
 				rpt.equal(value, 42, 'value is passed to the promise properly');
 			});
@@ -62,10 +63,10 @@ test('with a promise', function (t) {
 		st.test('with a rejected promise', function (et) {
 			et.plan(2);
 
-			var rejected = Q.reject(new Error(42));
+			var rejected = Promise(function () { throw new Error(42); });
 			var promisebacked = promiseback(rejected, null);
 
-			et.ok(Q.isPromise(promisebacked), 'returns a promise');
+			et.ok(promisebacked instanceof Promise, 'returns a promise');
 			promisebacked.then(null, function (reason) {
 				et.throws(function () { throw reason; }, TypeError, 'error reason is passed');
 			});
@@ -78,13 +79,13 @@ test('with a promise', function (t) {
 		st.test('with a resolved promise', function (rpt) {
 			rpt.plan(4);
 
-			var fulfilled = Q(42);
+			var fulfilled = Promise.from(42);
 			var promisebacked = promiseback(fulfilled, function (err, value) {
 				rpt.error(err, 'no error');
 				rpt.equal(value, 42, 'value is passed to the callback properly');
 			});
 
-			rpt.ok(Q.isPromise(promisebacked), 'returns a promise');
+			rpt.ok(promisebacked instanceof Promise, 'returns a promise');
 			promisebacked.then(function (value) {
 				rpt.equal(value, 42, 'value is passed to the promise properly');
 			});
@@ -93,13 +94,13 @@ test('with a promise', function (t) {
 		st.test('with a rejected promise', function (et) {
 			et.plan(4);
 
-			var rejected = Q.reject(new Error(42));
+			var rejected = Promise(function () { throw new Error(42); });
 			var promisebacked = promiseback(rejected, function (err, value) {
 				et.equal(undefined, value, 'value is undefined');
 				et.throws(function () { throw err; }, TypeError, 'calls the callback with an error');
 			});
 
-			et.ok(Q.isPromise(promisebacked), 'returns a promise');
+			et.ok(promisebacked instanceof Promise, 'returns a promise');
 			promisebacked.then(null, function (reason) {
 				et.throws(function () { throw reason; }, TypeError, 'error reason is passed');
 			});
@@ -113,7 +114,7 @@ test('with a promise', function (t) {
                 vt.equal(value, 42, 'value is passed to the callback properly');
             });
 
-            vt.ok(Q.isPromise(promisebacked), 'returns a promise');
+            vt.ok(promisebacked instanceof Promise, 'returns a promise');
             promisebacked.then(function (value) {
                 vt.equal(value, 42, 'value is passed to the promise properly');
             });

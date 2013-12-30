@@ -1,4 +1,5 @@
-var Q = require('q');
+var Deferred = require('promise-deferred');
+var Promise = Deferred.Promise;
 
 var toStr = Object.prototype.toString;
 var slice = Array.prototype.slice;
@@ -6,10 +7,11 @@ var isFunction = function (fn) {
 	return fn && typeof fn === 'function' && '[object Function]' === toStr.call(fn);
 };
 
+
 module.exports = function promiseback(callback) {
 	var promise;
 	if (arguments.length > 1) {
-		promise = Q(arguments[0]);
+		promise = Promise.from(arguments[0]);
 		callback = arguments[1];
 	}
 	var callbackIsFn = isFunction(callback);
@@ -19,15 +21,16 @@ module.exports = function promiseback(callback) {
 		throw new TypeError('callback must be a function if present');
 	}
 
-	var defer = Q.defer();
+	var promisebacked = new Deferred();
 
 	if (callbackIsFn) {
-		defer.promise.then(function (value) { callback(null, value); }, callback);
+		promisebacked.promise.nodeify(callback);
 	}
 
 	if (promise) {
-		defer.resolve(promise);
+		promise.then(promisebacked.resolve, promisebacked.reject);
 	}
-	return promise ? defer.promise : defer;
+	return promise ? promisebacked.promise : promisebacked;
 };
+module.exports.Deferred = Deferred;
 

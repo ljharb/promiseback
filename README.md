@@ -17,7 +17,7 @@ var callback = function (err, value) {};
 promiseback(callback);
 	/*
 		- will throw if `callback` is not a function
-		- returns a Q deferred
+		- returns a "deferred"
 		- has resolve/reject methods, and `promise` property
 		- will call `callback` as expected when deferred is resolved
 	*/
@@ -26,8 +26,8 @@ promiseback(callback);
 promiseback(promise, callback);
 	/*
 		- will throw if `callback` is truthy and not a function
-		- `promise` will be wrapped in Q, so you can pass a value as well
-		- returns a Q promise
+		- `promise` will be converted to a Promise, so you can pass a value as well
+		- returns a Promise
 		- will call `callback` as expected when the promise is fulfilled
 	*/
 ```
@@ -42,7 +42,7 @@ module.exports = function doSomethingCool(thing, callback) {
 	// If callback is not provided, this code will simply return a normal promise.
 	// If callback is provided but is not a function, promiseback will immediately throw a TypeError.
 
-	// "deferred" is the result of Q.defer()
+	// "deferred" is an object with `reject/resolve` methods, and a `promise` property.
 	var deferred = promiseback(callback);
 	if (thing) {
 		deferred.resolve(thing);
