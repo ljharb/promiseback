@@ -12,10 +12,10 @@ test('without a promise', function (t) {
 		st.ok(promiseback(undefined) instanceof Deferred, 'returns a deferred');
 		st.ok(promiseback(null) instanceof Deferred, 'returns a deferred');
 		var notFunctions = [true, {}, [], /a/g, 42, 'foo'];
-		notFunctions.forEach(function (notFunction) {
-			var type = toStr.call(notFunction).slice(8, -1).toLowerCase();
-			st.throws(function () { promiseback(notFunction); }, TypeError, type + ' is not a function');
-		});
+		for (var i = 0; i < notFunctions.length; ++i) {
+			var type = toStr.call(notFunctions[i]).slice(8, -1).toLowerCase();
+			st.throws(function () { promiseback(notFunctions[i]); }, TypeError, type + ' is not a function');
+		}
 		st.end();
 	});
 
