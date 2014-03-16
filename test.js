@@ -63,7 +63,7 @@ test('with a promise', function (t) {
 		st.test('with a rejected promise', function (et) {
 			et.plan(2);
 
-			var rejected = Promise(function () { throw new Error(42); });
+			var rejected = new Promise(function () { throw new Error(42); });
 			var promisebacked = promiseback(rejected, null);
 
 			et.ok(promisebacked instanceof Promise, 'returns a promise');
@@ -94,7 +94,7 @@ test('with a promise', function (t) {
 		st.test('with a rejected promise', function (et) {
 			et.plan(4);
 
-			var rejected = Promise(function () { throw new Error(42); });
+			var rejected = new Promise(function () { throw new Error(42); });
 			var promisebacked = promiseback(rejected, function (err, value) {
 				et.equal(undefined, value, 'value is undefined');
 				et.throws(function () { throw err; }, TypeError, 'calls the callback with an error');
