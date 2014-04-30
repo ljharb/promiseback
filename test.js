@@ -51,7 +51,7 @@ test('with a promise', function (t) {
 		st.test('with a resolved promise', function (rpt) {
 			rpt.plan(2);
 
-			var fulfilled = Promise.from(42);
+			var fulfilled = Promise.resolve(42);
 			var promisebacked = promiseback(fulfilled, null);
 
 			rpt.ok(promisebacked instanceof Promise, 'returns a promise');
@@ -79,7 +79,7 @@ test('with a promise', function (t) {
 		st.test('with a resolved promise', function (rpt) {
 			rpt.plan(4);
 
-			var fulfilled = Promise.from(42);
+			var fulfilled = Promise.resolve(42);
 			var promisebacked = promiseback(fulfilled, function (err, value) {
 				rpt.error(err, 'no error');
 				rpt.equal(value, 42, 'value is passed to the callback properly');

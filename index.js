@@ -11,7 +11,7 @@ var isFunction = function (fn) {
 module.exports = function promiseback(callback) {
 	var promise;
 	if (arguments.length > 1) {
-		promise = Promise.from(arguments[0]);
+		promise = Promise.resolve(arguments[0]);
 		callback = arguments[1];
 	}
 	var callbackIsFn = isFunction(callback);
