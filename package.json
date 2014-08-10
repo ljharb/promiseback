@@ -1,6 +1,6 @@
 {
 	"name": "promiseback",
-	"version": "0.3.0",
+	"version": "1.0.0",
 	"description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
 	"main": "index.js",
 	"scripts": {
