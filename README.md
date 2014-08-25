@@ -71,11 +71,11 @@ Simply clone the repo, `npm install`, and run `npm test`
 
 [1]: https://npmjs.org/package/promiseback
 [2]: http://vb.teelaun.ch/ljharb/promiseback.svg
-[3]: https://travis-ci.org/ljharb/promiseback.png
+[3]: https://travis-ci.org/ljharb/promiseback.svg
 [4]: https://travis-ci.org/ljharb/promiseback
-[5]: https://david-dm.org/ljharb/promiseback.png
+[5]: https://david-dm.org/ljharb/promiseback.svg
 [6]: https://david-dm.org/ljharb/promiseback
-[7]: https://david-dm.org/ljharb/promiseback/dev-status.png
+[7]: https://david-dm.org/ljharb/promiseback/dev-status.svg
 [8]: https://david-dm.org/ljharb/promiseback#info=devDependencies
 [9]: https://ci.testling.com/ljharb/promiseback.png
 [10]: https://ci.testling.com/ljharb/promiseback
