@@ -4,7 +4,7 @@ var Promise = Deferred.Promise;
 var toStr = Object.prototype.toString;
 var slice = Array.prototype.slice;
 var isFunction = function (fn) {
-	return fn && typeof fn === 'function' && '[object Function]' === toStr.call(fn);
+	return '[object Function]' === toStr.call(fn);
 };
 
 
