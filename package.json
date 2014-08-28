@@ -46,7 +46,7 @@
 		]
 	},
 	"dependencies": {
-		"promise-deferred": "~1.0.0"
+		"promise-deferred": "~1.0.1"
 	},
 	"devDependencies": {
 		"tape": "~2.14.0",
