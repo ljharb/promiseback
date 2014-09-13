@@ -6,7 +6,7 @@
 
 [![npm badge][11]][npm-url]
 
-[![browser support][9]][10]
+[![browser support][testling-png]][testling-url]
 
 Accept an optional node-style callback, and also return a spec-compliant Promise!
 
@@ -79,7 +79,7 @@ Simply clone the repo, `npm install`, and run `npm test`
 [deps-url]: https://david-dm.org/ljharb/promiseback
 [dev-deps-svg]: https://david-dm.org/ljharb/promiseback/dev-status.svg
 [dev-deps-url]: https://david-dm.org/ljharb/promiseback#info=devDependencies
-[9]: https://ci.testling.com/ljharb/promiseback.png
-[10]: https://ci.testling.com/ljharb/promiseback
+[testling-png]: https://ci.testling.com/ljharb/promiseback.png
+[testling-url]: https://ci.testling.com/ljharb/promiseback
 [11]: https://nodei.co/npm/promiseback.png?downloads=true&stars=true
 
