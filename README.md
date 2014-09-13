@@ -1,8 +1,8 @@
-#promiseback <sup>[![Version Badge][2]][1]</sup>
+#promiseback <sup>[![Version Badge][2]][npm-url]</sup>
 
 [![Build Status][3]][4] [![dependency status][5]][6] [![dev dependency status][7]][8]
 
-[![npm badge][11]][1]
+[![npm badge][11]][npm-url]
 
 [![browser support][9]][10]
 
@@ -69,7 +69,7 @@ module.exports = function doSomethingCool(thing, callback) {
 ## Tests
 Simply clone the repo, `npm install`, and run `npm test`
 
-[1]: https://npmjs.org/package/promiseback
+[npm-url]: https://npmjs.org/package/promiseback
 [2]: http://vb.teelaun.ch/ljharb/promiseback.svg
 [3]: https://travis-ci.org/ljharb/promiseback.svg
 [4]: https://travis-ci.org/ljharb/promiseback
