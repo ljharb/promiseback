@@ -1,6 +1,8 @@
 #promiseback <sup>[![Version Badge][npm-version-svg]][npm-url]</sup>
 
-[![Build Status][3]][4] [![dependency status][5]][6] [![dev dependency status][7]][8]
+[![Build Status][travis-svg]][travis-url]
+[![dependency status][5]][6]
+[![dev dependency status][7]][8]
 
 [![npm badge][11]][npm-url]
 
@@ -71,8 +73,8 @@ Simply clone the repo, `npm install`, and run `npm test`
 
 [npm-url]: https://npmjs.org/package/promiseback
 [npm-version-svg]: http://vb.teelaun.ch/ljharb/promiseback.svg
-[3]: https://travis-ci.org/ljharb/promiseback.svg
-[4]: https://travis-ci.org/ljharb/promiseback
+[travis-svg]: https://travis-ci.org/ljharb/promiseback.svg
+[travis-url]: https://travis-ci.org/ljharb/promiseback
 [5]: https://david-dm.org/ljharb/promiseback.svg
 [6]: https://david-dm.org/ljharb/promiseback
 [7]: https://david-dm.org/ljharb/promiseback/dev-status.svg
