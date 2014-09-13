@@ -1,8 +1,8 @@
 #promiseback <sup>[![Version Badge][npm-version-svg]][npm-url]</sup>
 
 [![Build Status][travis-svg]][travis-url]
-[![dependency status][5]][6]
-[![dev dependency status][7]][8]
+[![dependency status][deps-svg]][deps-url]
+[![dev dependency status][dev-deps-svg]][dev-deps-url]
 
 [![npm badge][11]][npm-url]
 
@@ -75,10 +75,10 @@ Simply clone the repo, `npm install`, and run `npm test`
 [npm-version-svg]: http://vb.teelaun.ch/ljharb/promiseback.svg
 [travis-svg]: https://travis-ci.org/ljharb/promiseback.svg
 [travis-url]: https://travis-ci.org/ljharb/promiseback
-[5]: https://david-dm.org/ljharb/promiseback.svg
-[6]: https://david-dm.org/ljharb/promiseback
-[7]: https://david-dm.org/ljharb/promiseback/dev-status.svg
-[8]: https://david-dm.org/ljharb/promiseback#info=devDependencies
+[deps-svg]: https://david-dm.org/ljharb/promiseback.svg
+[deps-url]: https://david-dm.org/ljharb/promiseback
+[dev-deps-svg]: https://david-dm.org/ljharb/promiseback/dev-status.svg
+[dev-deps-url]: https://david-dm.org/ljharb/promiseback#info=devDependencies
 [9]: https://ci.testling.com/ljharb/promiseback.png
 [10]: https://ci.testling.com/ljharb/promiseback
 [11]: https://nodei.co/npm/promiseback.png?downloads=true&stars=true
