@@ -68,7 +68,7 @@ test('with a promise', function (t) {
 
 			et.ok(promisebacked instanceof Promise, 'returns a promise');
 			promisebacked.then(null, function (reason) {
-				et.throws(function () { throw reason; }, TypeError, 'error reason is passed');
+				et.throws(function () { throw reason; }, Error, 'error reason is passed');
 			});
 		});
 
@@ -97,12 +97,12 @@ test('with a promise', function (t) {
 			var rejected = new Promise(function () { throw new Error(42); });
 			var promisebacked = promiseback(rejected, function (err, value) {
 				et.equal(undefined, value, 'value is undefined');
-				et.throws(function () { throw err; }, TypeError, 'calls the callback with an error');
+				et.throws(function () { throw err; }, Error, 'calls the callback with an error');
 			});
 
 			et.ok(promisebacked instanceof Promise, 'returns a promise');
 			promisebacked.then(null, function (reason) {
-				et.throws(function () { throw reason; }, TypeError, 'error reason is passed');
+				et.throws(function () { throw reason; }, Error, 'error reason is passed');
 			});
 		});
 
