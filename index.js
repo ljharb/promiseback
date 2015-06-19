@@ -1,10 +1,6 @@
 var Deferred = require('promise-deferred');
 var Promise = Deferred.Promise;
-
-var toStr = Object.prototype.toString;
-var isFunction = function (fn) {
-	return toStr.call(fn) === '[object Function]';
-};
+var isCallable = require('is-callable');
 
 module.exports = function promiseback() {
 	var promise, callback;
@@ -15,7 +11,7 @@ module.exports = function promiseback() {
 		promise = Promise.resolve(arguments[0]);
 		callback = arguments[1];
 	}
-	var callbackIsFn = isFunction(callback);
+	var callbackIsFn = isCallable(callback);
 
 	// invalid callback
 	if (callback != null && !callbackIsFn) {

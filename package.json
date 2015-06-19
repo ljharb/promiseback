@@ -48,7 +48,8 @@
 		]
 	},
 	"dependencies": {
-		"promise-deferred": "^2.0.1"
+		"promise-deferred": "^2.0.1",
+		"is-callable": "^1.0.4"
 	},
 	"devDependencies": {
 		"tape": "^4.0.0",
