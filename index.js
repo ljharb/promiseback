@@ -3,9 +3,8 @@ var Promise = Deferred.Promise;
 
 var toStr = Object.prototype.toString;
 var isFunction = function (fn) {
-	return '[object Function]' === toStr.call(fn);
+	return toStr.call(fn) === '[object Function]';
 };
-
 
 module.exports = function promiseback(callback) {
 	var promise;
