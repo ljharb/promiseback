@@ -1,5 +1,6 @@
 var test = require('tape');
 var promiseback = require('./');
+var forEach = require('foreach');
 
 var Deferred = promiseback.Deferred;
 var Promise = Deferred.Promise;
@@ -12,10 +13,10 @@ test('without a promise', function (t) {
 		st.ok(promiseback(undefined) instanceof Deferred, 'returns a deferred');
 		st.ok(promiseback(null) instanceof Deferred, 'returns a deferred');
 		var notFunctions = [true, {}, [], /a/g, 42, 'foo'];
-		for (var i = 0; i < notFunctions.length; ++i) {
-			var type = toStr.call(notFunctions[i]).slice(8, -1).toLowerCase();
-			st.throws(function () { promiseback(notFunctions[i]); }, TypeError, type + ' is not a function');
-		}
+		forEach(notFunctions, function (notFunc) {
+			var type = toStr.call(notFunc).slice(8, -1).toLowerCase();
+			st.throws(function () { promiseback(notFunc); }, TypeError, type + ' is not a function');
+		});
 		st.end();
 	});
 
@@ -125,4 +126,3 @@ test('with a promise', function (t) {
 
 	t.end();
 });
-
