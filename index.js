@@ -6,8 +6,11 @@ var isFunction = function (fn) {
 	return toStr.call(fn) === '[object Function]';
 };
 
-module.exports = function promiseback(callback) {
-	var promise;
+module.exports = function promiseback() {
+	var promise, callback;
+	if (arguments.length > 0) {
+		callback = arguments[0];
+	}
 	if (arguments.length > 1) {
 		promise = Promise.resolve(arguments[0]);
 		callback = arguments[1];
