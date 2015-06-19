@@ -2,7 +2,6 @@ var Deferred = require('promise-deferred');
 var Promise = Deferred.Promise;
 
 var toStr = Object.prototype.toString;
-var slice = Array.prototype.slice;
 var isFunction = function (fn) {
 	return '[object Function]' === toStr.call(fn);
 };
