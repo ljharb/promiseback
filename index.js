@@ -1,15 +1,16 @@
+'use strict';
+
 var Deferred = require('promise-deferred');
 var Promise = Deferred.Promise;
 var isCallable = require('is-callable');
 
 module.exports = function promiseback() {
 	var promise, callback;
-	if (arguments.length > 0) {
-		callback = arguments[0];
-	}
 	if (arguments.length > 1) {
 		promise = Promise.resolve(arguments[0]);
 		callback = arguments[1];
+	} else if (arguments.length > 0) {
+		callback = arguments[0];
 	}
 	var callbackIsFn = isCallable(callback);
 
