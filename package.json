@@ -4,12 +4,13 @@
 	"description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
 	"main": "index.js",
 	"scripts": {
-		"test": "npm run lint && node test.js && npm run coverage-quiet",
+		"test": "npm run lint && node test.js && npm run coverage-quiet && npm run security",
 		"coverage": "covert test.js",
 		"coverage-quiet": "covert test.js --quiet",
 		"lint": "npm run jscs && npm run eslint",
 		"jscs": "jscs *.js",
-		"eslint": "eslint *.js"
+		"eslint": "eslint *.js",
+		"security": "nsp package"
 	},
 	"repository": {
 		"type": "git",
@@ -57,7 +58,8 @@
 		"jscs": "^2.0.0",
 		"eslint": "^1.0.0",
 		"@ljharb/eslint-config": "^1.0.4",
-		"foreach": "^2.0.5"
+		"foreach": "^2.0.5",
+		"nsp": "^1.0.3"
 	},
 	"engines": {
 		"node": ">= 0.4"
