@@ -72,7 +72,7 @@ module.exports = function doSomethingCool(thing, callback) {
 Simply clone the repo, `npm install`, and run `npm test`
 
 [npm-url]: https://npmjs.org/package/promiseback
-[npm-version-svg]: http://vb.teelaun.ch/ljharb/promiseback.svg
+[npm-version-svg]: http://versionbadg.es/ljharb/promiseback.svg
 [travis-svg]: https://travis-ci.org/ljharb/promiseback.svg
 [travis-url]: https://travis-ci.org/ljharb/promiseback
 [deps-svg]: https://david-dm.org/ljharb/promiseback.svg
@@ -82,4 +82,3 @@ Simply clone the repo, `npm install`, and run `npm test`
 [testling-png]: https://ci.testling.com/ljharb/promiseback.png
 [testling-url]: https://ci.testling.com/ljharb/promiseback
 [npm-badge-png]: https://nodei.co/npm/promiseback.png?downloads=true&stars=true
-
