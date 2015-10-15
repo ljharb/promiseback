@@ -4,6 +4,7 @@
 	"extends": "@ljharb",
 
 	"rules": {
+		"eqeqeq": [2, "allow-null"],
 		"max-nested-callbacks": [2, 5],
 		"max-statements": [2, 16]
 	}
