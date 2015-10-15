@@ -1,3 +1,13 @@
+2.0.2 / 2015-10-14
+==================
+  * Lots of code cleanup.
+  * [Fix] Use `is-callable` to detect if the callback is callable
+  * [Docs] add a CHANGELOG
+  * [Docs] Switch from vb.teelaun.ch to versionbadg.es for the npm version badge SVG
+  * [Tests] up to `io.js` `v3.3`, `node` `v4.2`
+  * [Tests] add `npm run security`
+  * [Dev Deps] Update `tape`, `jscs`, `covert`, `eslint`, `@ljharb/eslint-config`
+
 2.0.1 / 2015-01-20
 ==================
   * [Tests] Fix tests checking for wrong error type.
