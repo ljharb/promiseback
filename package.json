@@ -4,6 +4,7 @@
 	"description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
 	"main": "index.js",
 	"scripts": {
+		"prepublish": "safe-publish-latest",
 		"pretest": "npm run lint",
 		"tests-only": "node test",
 		"test": "npm run tests-only && npm run coverage -- --quiet",
@@ -55,11 +56,12 @@
 		"is-callable": "^1.1.0"
 	},
 	"devDependencies": {
-		"tape": "^4.2.1",
-		"covert": "^1.1.0",
-		"eslint": "^1.6.0",
-		"@ljharb/eslint-config": "^1.3.0",
-		"foreach": "^2.0.5"
+		"@ljharb/eslint-config": "^15.1.0",
+		"covert": "^1.1.1",
+		"eslint": "^6.8.0",
+		"foreach": "^2.0.5",
+		"safe-publish-latest": "^1.1.4",
+		"tape": "^5.0.0-next.3"
 	},
 	"engines": {
 		"node": ">= 0.4"

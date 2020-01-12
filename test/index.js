@@ -17,7 +17,7 @@ test('without a promise', function (t) {
 		var notFunctions = [true, {}, [], /a/g, 42, 'foo'];
 		forEach(notFunctions, function (notFunc) {
 			var type = toStr.call(notFunc).slice(8, -1).toLowerCase();
-			st.throws(function () { promiseback(notFunc); }, TypeError, type + ' is not a function');
+			st['throws'](function () { promiseback(notFunc); }, TypeError, type + ' is not a function');
 		});
 		st.end();
 	});
@@ -27,7 +27,7 @@ test('without a promise', function (t) {
 			et.plan(3);
 			var deferred = promiseback(function (err, value) {
 				et.equal(undefined, value, 'value is undefined');
-				et.throws(function () { throw err; }, TypeError, 'calls the callback with an error');
+				et['throws'](function () { throw err; }, TypeError, 'calls the callback with an error');
 			});
 			et.ok(deferred instanceof Deferred, 'returns a deferred');
 			deferred.reject(new TypeError('an error!'));
@@ -71,7 +71,7 @@ test('with a promise', function (t) {
 
 			et.ok(promisebacked instanceof Promise, 'returns a promise');
 			promisebacked.then(null, function (reason) {
-				et.throws(function () { throw reason; }, Error, 'error reason is passed');
+				et['throws'](function () { throw reason; }, Error, 'error reason is passed');
 			});
 		});
 
@@ -100,12 +100,12 @@ test('with a promise', function (t) {
 			var rejected = new Promise(function () { throw new Error(42); });
 			var promisebacked = promiseback(rejected, function (err, value) {
 				et.equal(undefined, value, 'value is undefined');
-				et.throws(function () { throw err; }, Error, 'calls the callback with an error');
+				et['throws'](function () { throw err; }, Error, 'calls the callback with an error');
 			});
 
 			et.ok(promisebacked instanceof Promise, 'returns a promise');
 			promisebacked.then(null, function (reason) {
-				et.throws(function () { throw reason; }, Error, 'error reason is passed');
+				et['throws'](function () { throw reason; }, Error, 'error reason is passed');
 			});
 		});
 
@@ -113,14 +113,14 @@ test('with a promise', function (t) {
 			vt.plan(4);
 
 			var promisebacked = promiseback(42, function (err, value) {
-                vt.error(err, 'no error');
-                vt.equal(value, 42, 'value is passed to the callback properly');
-            });
+				vt.error(err, 'no error');
+				vt.equal(value, 42, 'value is passed to the callback properly');
+			});
 
-            vt.ok(promisebacked instanceof Promise, 'returns a promise');
-            promisebacked.then(function (value) {
-                vt.equal(value, 42, 'value is passed to the promise properly');
-            });
+			vt.ok(promisebacked instanceof Promise, 'returns a promise');
+			promisebacked.then(function (value) {
+				vt.equal(value, 42, 'value is passed to the promise properly');
+			});
 		});
 
 		st.end();
