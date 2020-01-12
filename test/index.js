@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var promiseback = require('./');
+var promiseback = require('..');
 var forEach = require('foreach');
 
 var Deferred = promiseback.Deferred;

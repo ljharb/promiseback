@@ -5,9 +5,10 @@
 	"main": "index.js",
 	"scripts": {
 		"pretest": "npm run lint",
-		"test": "node test.js && npm run coverage -- --quiet",
+		"tests-only": "node test",
+		"test": "npm run tests-only && npm run coverage -- --quiet",
 		"posttest": "npx aud",
-		"coverage": "covert test.js",
+		"coverage": "covert test/index.js",
 		"lint": "eslint ."
 	},
 	"repository": {
@@ -32,7 +33,7 @@
 	},
 	"homepage": "https://github.com/ljharb/promiseback",
 	"testling": {
-		"files": "test.js",
+		"files": "test/index.js",
 		"browsers": [
 			"iexplore/6.0..latest",
 			"firefox/3.0..6.0",
