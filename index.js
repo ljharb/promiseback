@@ -22,7 +22,10 @@ module.exports = function promiseback() {
 	var promisebacked = new Deferred();
 
 	if (callbackIsFn) {
-		promisebacked.promise.nodeify(callback);
+		promisebacked.promise.then(
+			function (v) { callback(null, v); },
+			function (e) { callback(e); }
+		);
 	}
 
 	if (promise) {

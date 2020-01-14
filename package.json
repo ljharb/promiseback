@@ -53,7 +53,7 @@
 	},
 	"dependencies": {
 		"is-callable": "^1.1.5",
-		"promise-deferred": "^2.0.1"
+		"promise-deferred": "^2.0.3"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^15.1.0",
