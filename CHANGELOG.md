@@ -1,3 +1,15 @@
+2.0.3 / 2020-01-14
+==================
+  * [Fix] do not depend on non-standard `promise-deferred` extensions
+  * [Deps] update `is-callable`
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape`, `covert`; add `safe-publish-latest`
+  * [Tests] use shared travis-ci configs
+  * [Tests] use `npx aud` instead of `nsp` or `npm audit` with hoops
+  * [Tests] remove `jscs`
+  * [meta] Only apps should have lockfiles
+  * [meta] add `funding` field
+  * [actions] add automatic rebasing / merge commit blocking
+
 2.0.2 / 2015-10-14
 ==================
   * Lots of code cleanup.
