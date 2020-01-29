@@ -56,12 +56,12 @@
 		"promise-deferred": "^2.0.3"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^15.1.0",
+		"@ljharb/eslint-config": "^16.0.0",
 		"covert": "^1.1.1",
 		"eslint": "^6.8.0",
 		"foreach": "^2.0.5",
 		"safe-publish-latest": "^1.1.4",
-		"tape": "^5.0.0-next.3"
+		"tape": "^5.0.0-next.4"
 	},
 	"engines": {
 		"node": ">= 0.4"
