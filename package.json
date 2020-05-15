@@ -56,7 +56,7 @@
 		"promise-deferred": "^2.0.3"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^16.0.0",
+		"@ljharb/eslint-config": "^17.1.0",
 		"covert": "^1.1.1",
 		"eslint": "^6.8.0",
 		"foreach": "^2.0.5",
