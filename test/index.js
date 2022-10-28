@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var promiseback = require('..');
-var forEach = require('foreach');
+var forEach = require('for-each');
 
 var Deferred = promiseback.Deferred;
 var Promise = Deferred.Promise;
